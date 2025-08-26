@@ -16,13 +16,10 @@ days = st.number_input("Enter Days to Search (1-30):", min_value=1, max_value=30
 
 # List of broader keywords
 keywords = [
- "Affair Relationship Stories", "Reddit Update", "Reddit Relationship Advice", "Reddit Relationship", 
-"Reddit Cheating", "AITA Update", "Open Marriage", "Open Relationship", "X BF Caught", 
-"Stories Cheat", "X GF Reddit", "AskReddit Surviving Infidelity", "GurlCan Reddit", 
-"Cheating Story Actually Happened", "Cheating Story Real", "True Cheating Story", 
-"Reddit Cheating Story", "R/Surviving Infidelity", "Surviving Infidelity", 
-"Reddit Marriage", "Wife Cheated I Can't Forgive", "Reddit AP", "Exposed Wife", 
-"Cheat Exposed"
+  "mysterious missing person case unsolved", "unsolved disappearance cold case 1950s", "girl vanished mysteriously story", 
+    "dark family secret revealed true story", "family hidden crimes documentary", "shocking family history mystery", "true dark family secrets uncovered", 
+    "orphanage horror real events", "religious school disappearance case", "claustrophobic convent secret exposed", "serial killer family history true", 
+    "family of killers real story", "multiple murder family case", "serial killer siblings uncovered", "reddit crime", "reddit horror story"
 ]
 
 # Fetch Data Button
@@ -90,8 +87,8 @@ if st.button("Fetch Data"):
                 title = video["snippet"].get("title", "N/A")
                 description = video["snippet"].get("description", "")[:200]
                 video_url = f"https://www.youtube.com/watch?v={video['id']['videoId']}"
-                views = int(stat["statistics"].get("viewCount", 0))
-                subs = int(channel["statistics"].get("subscriberCount", 0))
+                views = int(stat["statistics"].get("viewCount", 4000))
+                subs = int(channel["statistics"].get("subscriberCount", 3000))
 
                 if subs < 3000:  # Only include channels with fewer than 3,000 subscribers
                     all_results.append({
